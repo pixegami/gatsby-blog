@@ -1,0 +1,25 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "My Gatsby site",
+  "author": "Jack",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "deploy": "aws s3 sync public s3://blog.pixegami.com/ --acl public-read",
+    "invalidate": "aws  cloudfront create-invalidation --distribution-id E2R4ZVES31PMW4 --paths \"/*\""
+  },
+  "license": "0BSD",
+  "dependencies": {
+    "gatsby": "^2.26.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
