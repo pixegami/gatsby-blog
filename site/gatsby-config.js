@@ -5,6 +5,7 @@ module.exports = {
     author: `@pixegami`,
   },
   plugins: [
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-google-analytics`,
