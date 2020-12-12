@@ -1,0 +1,84 @@
+@layer components {
+  .blog-post h1 {
+    @apply text-2xl;
+    @apply mb-3;
+    @apply font-light;
+    @apply border-b-2;
+    @apply border-gray-200;
+    @apply p-3;
+    @apply text-center;
+    @apply bg-gray-100;
+  }
+
+  .blog-post h2 {
+    @apply mt-5;
+    @apply text-2xl;
+    @apply mb-3;
+    @apply font-semibold;
+    @apply border-b;
+    @apply pb-1;
+  }
+
+  .blog-post h3 {
+    @apply mt-5;
+    @apply text-lg;
+    @apply font-semibold;
+  }
+
+  .blog-post p {
+    @apply mb-3;
+  }
+
+  .blog-post blockquote p {
+    @apply mb-0;
+  }
+
+  .blog-post blockquote {
+    @apply p-2;
+    @apply bg-gray-100;
+    @apply text-gray-700;
+    @apply italic;
+    @apply text-lg;
+    @apply mb-3;
+    @apply border-l-4;
+    @apply border-gray-300;
+  }
+
+  .blog-post ul {
+    @apply mb-3;
+  }
+
+  .blog-post li {
+    @apply ml-7;
+    list-style-type: "•";
+    padding-inline-start: 1ch;
+  }
+
+  .blog-post hr {
+    @apply mt-5;
+    @apply mb-5;
+  }
+
+  .blog-post table {
+    @apply w-full;
+    @apply mb-5;
+    @apply table-auto;
+  }
+
+  .blog-post th {
+    @apply bg-gray-700;
+    @apply p-1;
+    @apply border-2;
+    @apply border-white;
+    @apply text-gray-100;
+    @apply text-sm;
+    @apply font-bold;
+  }
+
+  .blog-post td {
+    @apply p-2;
+    @apply border-2;
+    @apply border-white;
+    @apply bg-gray-100;
+  }
+}

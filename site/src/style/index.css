@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "typography.css";
+
+body {
+    font-family: "Quicksand", Arial, Helvetica, sans-serif;
+    @apply bg-gray-100;
+}

@@ -10,6 +10,7 @@ Woooow these Pandas are so good.
 aws cli "do something"
 ls -f
 ```
+
 This is a markdown section in `Python`:
 
 ```python
@@ -18,25 +19,26 @@ def main():
     print("Hello World")
 ```
 
-# This is a header 1
+### This is a header 3
 
-Hello *italics!*
+Hello _italics!_
 
 ## This is a header 2
 
 Hello **bold!**
 
->This is a block quote.
+> This is a block quote.
 
 > Can we get much higher?
 
 ---
 
-* Bullet 1
-* Bullet 2
-* Bullet 3
+- **Bullet 1**: I want to make a really long first bullet point. Just to prove some points about how the text would wrap.
+- Bullet 2
+- Bullet 3
 
-| This | is    |
-| ---- | ----- |
-| a    | table |
-
+| Instance   | vCPU | Credits |
+| ---------- | ---- | ------- |
+| t2.nano    | 2    | 6       |
+| t3a.nano   | 2    | 12      |
+| t31.medium | 2    | 24      |

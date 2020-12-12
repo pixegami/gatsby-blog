@@ -3,16 +3,11 @@ import React from "react";
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = (props) => {
+  const footerText: string = `© ${new Date().getFullYear()} Pixegami`;
   return (
     <div>
-      <footer
-        style={{
-          marginTop: `2rem`,
-        }}
-      >
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+      <footer>
+        <div className="mt-6 text-center text-gray-500">{footerText}</div>
       </footer>
     </div>
   );

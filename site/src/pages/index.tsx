@@ -1,5 +1,6 @@
 import { graphql, Link, PageProps } from "gatsby";
 import React from "react";
+import BlogCard from "../components/blog-card";
 import Layout from "../components/layout";
 import "../style/index.css";
 
@@ -57,22 +58,22 @@ const Index: React.FC<IndexPageProps> = (props) => {
   console.log(props);
   return (
     <Layout>
-      <h1 className="bg-gray-400">Site About: Pandas</h1>
-
-      <h4>{props.data.allMarkdownRemark.totalCount} Posts</h4>
-      {props.data.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id}>
-          <Link
-            to={node.fields.slug}
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <h3>
-              {node.frontmatter.title} <span>{node.frontmatter.date}</span>
-            </h3>
-            <p>{node.excerpt}</p>
-          </Link>
-        </div>
-      ))}
+      <div className="">
+        {props.data.allMarkdownRemark.edges.map(({ node }) => (
+          <BlogCard slug={node.fields.slug} />
+          // <div key={node.id}>
+          //   <Link
+          //     to={node.fields.slug}
+          //     style={{ textDecoration: "none", color: "inherit" }}
+          //   >
+          //     <h3>
+          //       {node.frontmatter.title} <span>{node.frontmatter.date}</span>
+          //     </h3>
+          //     <p>{node.excerpt}</p>
+          //   </Link>
+          // </div>
+        ))}
+      </div>
     </Layout>
   );
 };

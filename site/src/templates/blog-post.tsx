@@ -1,15 +1,17 @@
-import { graphql, PageProps } from "gatsby"
-import React from "react"
+import { graphql, PageProps } from "gatsby";
+import React from "react";
+import Layout from "../components/layout";
+import "../style/post.css";
 
 interface BlogPostProps extends PageProps {
   data: {
     markdownRemark: {
-      html: string
+      html: string;
       frontmatter: {
-        title: string
-      }
-    }
-  }
+        title: string;
+      };
+    };
+  };
 }
 
 export const query = graphql`
@@ -21,19 +23,19 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-const BlogPost: React.FC<BlogPostProps> = props => {
-  console.log(props)
-  const post = props.data.markdownRemark
+const BlogPost: React.FC<BlogPostProps> = (props) => {
+  console.log(props);
+  const post = props.data.markdownRemark;
   return (
-    <div>
-      <div>
+    <Layout>
+      <div className="blog-post mt-2 p-4 border-gray-200 border bg-white shadow-sm">
         <h1>{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
-    </div>
-  )
-}
+    </Layout>
+  );
+};
 
-export default BlogPost
+export default BlogPost;
