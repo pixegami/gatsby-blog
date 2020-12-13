@@ -7,7 +7,7 @@ const Footer: React.FC<FooterProps> = (props) => {
   return (
     <div>
       <footer>
-        <div className="mt-6 text-center text-gray-500">{footerText}</div>
+        <div className="mt-6 mb-6 text-center text-gray-500">{footerText}</div>
       </footer>
     </div>
   );

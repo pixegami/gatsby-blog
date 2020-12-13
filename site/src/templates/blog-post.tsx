@@ -30,9 +30,13 @@ const BlogPost: React.FC<BlogPostProps> = (props) => {
   const post = props.data.markdownRemark;
   return (
     <Layout>
-      <div className="blog-post mt-2 p-4 border-gray-200 border bg-white shadow-sm">
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <h1 className="text-lg p-4 pt-2 pb-2 md:pt-4 md:pb-4 md:text-2xl bg-gradient-to-r from-red-700 via-indigo-700 to-blue-700 text-white">
+        {post.frontmatter.title}
+      </h1>
+      <div className="p-4 border-gray-200 border bg-white shadow-sm">
+        <div className="blog-post">
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </div>
       </div>
     </Layout>
   );
