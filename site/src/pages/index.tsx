@@ -60,7 +60,7 @@ const Index: React.FC<IndexPageProps> = (props) => {
     <Layout>
       <div className="">
         {props.data.allMarkdownRemark.edges.map(({ node }) => (
-          <BlogCard slug={node.fields.slug} />
+          <BlogCard title={node.frontmatter.title} slug={node.fields.slug} />
           // <div key={node.id}>
           //   <Link
           //     to={node.fields.slug}

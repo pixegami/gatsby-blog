@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -14,7 +15,7 @@ module.exports = {
         trackingId: "255728396",
         head: false,
         exclude: ["/preview/**", "/do-not-track/me/too/"],
-        pageTransitionDelay: 1000
+        pageTransitionDelay: 1000,
       },
     },
     {
@@ -28,6 +29,12 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
           {
             resolve: `gatsby-remark-prismjs`,
             options: {

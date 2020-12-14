@@ -2,6 +2,7 @@ import { Link } from "gatsby";
 import React from "react";
 
 interface BlogCardProps {
+  title: string;
   slug: string;
 }
 
@@ -10,7 +11,7 @@ const BlogCard: React.FC<BlogCardProps> = (props) => {
     <div className="p-4 md:mt-2 border-gray-200 border-b md:border bg-white md:shadow-sm">
       <Link to={props.slug}>
         <h2 className="text-lg font-semibold hover:text-blue-700 hover:underline">
-          My Blog Title
+          {props.title}
         </h2>
       </Link>
       {/* <div className="font-medium mt-2">This is a blog card.</div> */}

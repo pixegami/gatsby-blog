@@ -10,6 +10,7 @@ Here is some cool Panda art.
 aws cli "do something"
 ls -f
 ```
+
 This is a markdown section in `Python`:
 
 ```python
@@ -20,23 +21,22 @@ def main():
 
 # This is a header 1
 
-Hello *italics!*
+Hello _italics!_
 
 ## This is a header 2
 
 Hello **bold!**
 
->This is a block quote.
+> This is a block quote.
 
 > Can we get much higher?
 
 ---
 
-* Bullet 1
-* Bullet 2
-* Bullet 3
+- Bullet 1
+- Bullet 2
+- Bullet 3
 
 | This | is    |
 | ---- | ----- |
 | a    | table |
-

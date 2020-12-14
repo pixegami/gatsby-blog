@@ -1,22 +1,22 @@
 @layer components {
   .blog-post h1 {
+    @apply mt-5;
     @apply text-2xl;
     @apply mb-3;
-    @apply font-light;
-    @apply border-b-2;
-    @apply border-gray-200;
-    @apply p-3;
-    @apply text-center;
-    @apply bg-gray-100;
+    @apply font-bold;
+    @apply border-b;
+    @apply pb-1;
+    font-family: "Roboto";
   }
 
   .blog-post h2 {
     @apply mt-5;
-    @apply text-2xl;
+    @apply text-xl;
     @apply mb-3;
-    @apply font-semibold;
+    @apply font-medium;
     @apply border-b;
     @apply pb-1;
+    font-family: "Roboto";
   }
 
   .blog-post h3 {
@@ -25,8 +25,17 @@
     @apply font-semibold;
   }
 
+  .blog-post a {
+    @apply text-blue-500;
+    @apply font-medium;
+  }
+
+  .blog-post a:hover {
+    @apply underline;
+  }
+
   .blog-post p {
-    @apply mb-3;
+    @apply mb-5;
   }
 
   .blog-post blockquote p {
@@ -39,24 +48,29 @@
     @apply text-gray-700;
     @apply italic;
     @apply text-lg;
-    @apply mb-3;
+    @apply mb-5;
     @apply border-l-4;
     @apply border-gray-300;
   }
 
   .blog-post ul {
-    @apply mb-3;
+    @apply mb-5;
+    @apply list-disc;
+  }
+
+  .blog-post ol {
+    @apply mb-5;
+    @apply list-decimal;
   }
 
   .blog-post li {
-    @apply ml-7;
-    list-style-type: "•";
+    @apply ml-5;
     padding-inline-start: 1ch;
   }
 
   .blog-post hr {
-    @apply mt-5;
-    @apply mb-5;
+    @apply mt-7;
+    @apply mb-7;
   }
 
   .blog-post table {
