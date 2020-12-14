@@ -2,9 +2,14 @@ import { graphql, Link, PageProps } from "gatsby";
 import React from "react";
 import BlogCard from "../components/blog-card";
 import Layout from "../components/layout";
+import PaginationBar from "../components/pagination-bar";
 import "../style/index.css";
 
 interface IndexPageProps extends PageProps {
+  pageContext: {
+    numPages: number;
+    currentPage: number;
+  };
   data: {
     allMarkdownRemark: {
       totalCount: number;
@@ -31,8 +36,12 @@ interface FileNode {
 }
 
 export const pageQuery = graphql`
-  query MyQuery {
-    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+  query blogListQuery($skip: Int!, $limit: Int!) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
       totalCount
       edges {
         node {
@@ -54,28 +63,25 @@ export const pageQuery = graphql`
   }
 `;
 
-const Index: React.FC<IndexPageProps> = (props) => {
+const BlogList: React.FC<IndexPageProps> = (props) => {
   console.log(props);
   return (
     <Layout>
       <div className="">
         {props.data.allMarkdownRemark.edges.map(({ node }) => (
-          <BlogCard title={node.frontmatter.title} slug={node.fields.slug} />
-          // <div key={node.id}>
-          //   <Link
-          //     to={node.fields.slug}
-          //     style={{ textDecoration: "none", color: "inherit" }}
-          //   >
-          //     <h3>
-          //       {node.frontmatter.title} <span>{node.frontmatter.date}</span>
-          //     </h3>
-          //     <p>{node.excerpt}</p>
-          //   </Link>
-          // </div>
+          <BlogCard
+            title={node.frontmatter.title}
+            slug={node.fields.slug}
+            date={node.frontmatter.date}
+          />
         ))}
       </div>
+      <PaginationBar
+        currentPage={props.pageContext.currentPage}
+        numPages={props.pageContext.numPages}
+      />
     </Layout>
   );
 };
 
-export default Index;
+export default BlogList;

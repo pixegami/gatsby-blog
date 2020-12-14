@@ -6,7 +6,6 @@
     @apply font-bold;
     @apply border-b;
     @apply pb-1;
-    font-family: "Roboto";
   }
 
   .blog-post h2 {
@@ -16,7 +15,6 @@
     @apply font-medium;
     @apply border-b;
     @apply pb-1;
-    font-family: "Roboto";
   }
 
   .blog-post h3 {

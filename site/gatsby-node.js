@@ -5,27 +5,35 @@
  */
 
 // You can delete this file if you're not using it
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require(`path`);
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
-    console.log(slug)
+    const relativePath = createFilePath({
+      node,
+      getNode,
+      basePath: `posts`,
+      trailingSlash: false,
+    });
+    const slugArr = relativePath.split("/");
+    const tail = slugArr[slugArr.length - 1];
+    console.log(relativePath, tail);
+
     createNodeField({
       node,
       name: `slug`,
-      value: slug,
-    })
+      value: `/posts/${tail}`,
+    });
   }
-}
+};
 
 exports.createPages = async ({ graphql, actions }) => {
   // **Note:** The graphql function call returns a Promise
   // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
-  
-  const { createPage } = actions
+
+  const { createPage } = actions;
   const result = await graphql(`
     query {
       allMarkdownRemark {
@@ -38,7 +46,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-  `)
+  `);
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
@@ -49,8 +57,25 @@ exports.createPages = async ({ graphql, actions }) => {
         // in page queries as GraphQL variables.
         slug: node.fields.slug,
       },
-    })
-  })
+    });
+  });
 
-  console.log(JSON.stringify(result, null, 4))
-}
+  console.log(JSON.stringify(result, null, 4));
+
+  // Create blog-list pages
+  const posts = result.data.allMarkdownRemark.edges;
+  const postsPerPage = 3;
+  const numPages = Math.ceil(posts.length / postsPerPage);
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/` : `/blog/${i + 1}`,
+      component: path.resolve("./src/templates/blog-list.tsx"),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    });
+  });
+};

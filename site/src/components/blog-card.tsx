@@ -4,6 +4,7 @@ import React from "react";
 interface BlogCardProps {
   title: string;
   slug: string;
+  date: string;
 }
 
 const BlogCard: React.FC<BlogCardProps> = (props) => {
@@ -15,7 +16,7 @@ const BlogCard: React.FC<BlogCardProps> = (props) => {
         </h2>
       </Link>
       {/* <div className="font-medium mt-2">This is a blog card.</div> */}
-      <div className="font-semibold text-sm text-gray-400">04/06/2019</div>
+      <div className="font-semibold text-sm text-gray-400">{props.date}</div>
     </div>
   );
 };
