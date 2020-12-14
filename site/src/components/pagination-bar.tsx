@@ -58,6 +58,9 @@ const createPageButton = (pageTarget: number, chevron: JSX.Element) => {
 };
 
 const PaginationBar: React.FC<PaginationBarProps> = (props) => {
+  if (props.numPages === 1) {
+    return <></>;
+  }
   const footerText = (
     <p className="text-sm font-medium text-gray-300">
       {"Page "}

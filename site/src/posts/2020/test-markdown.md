@@ -25,7 +25,7 @@ def main():
 
 Hello _italics!_
 
-![image](./test_img.jpg)
+![image](./test_pumpkin.jpg)
 
 ## This is a header 2
 
