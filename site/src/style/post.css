@@ -19,6 +19,13 @@
 
   .blog-post h3 {
     @apply mt-5;
+    @apply mb-3;
+    @apply text-lg;
+    @apply font-semibold;
+  }
+
+  .blog-post h4 {
+    @apply mt-5;
     @apply text-lg;
     @apply font-semibold;
   }

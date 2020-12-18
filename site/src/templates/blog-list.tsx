@@ -29,6 +29,7 @@ interface FileNode {
     frontmatter: {
       date: string;
       title: string;
+      subtitle: string;
     };
     timeToRead: string;
     id: string;
@@ -53,6 +54,7 @@ export const pageQuery = graphql`
           frontmatter {
             date
             title
+            subtitle
           }
           timeToRead
           id
@@ -71,6 +73,7 @@ const BlogList: React.FC<IndexPageProps> = (props) => {
         {props.data.allMarkdownRemark.edges.map(({ node }) => (
           <BlogCard
             title={node.frontmatter.title}
+            subtitle={node.frontmatter.subtitle}
             slug={node.fields.slug}
             date={node.frontmatter.date}
           />

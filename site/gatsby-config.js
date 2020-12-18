@@ -9,13 +9,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: "255728396",
-        head: false,
-        exclude: ["/preview/**", "/do-not-track/me/too/"],
-        pageTransitionDelay: 1000,
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-CNKRNPNCQP", // Google Analytics / GA
+        ],
       },
     },
     {
