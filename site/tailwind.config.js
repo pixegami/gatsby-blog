@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       body: ["Quicksand"],
-      display: ["Roboto"],
+      display: ["Ubuntu"],
     },
     extend: {},
   },
