@@ -23,4 +23,4 @@ Being a software engineer by trade, I liked the idea of "folding pixels" to make
 
 I hope you'll find it fun and useful!
 
---- Jack
+— J
