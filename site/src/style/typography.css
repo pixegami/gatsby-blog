@@ -1,34 +1,4 @@
 @font-face {
-  font-family: "Quicksand";
-  font-weight: 300;
-  src: url("../fonts/Quicksand-Light.ttf");
-}
-
-@font-face {
-  font-family: "Quicksand";
-  font-weight: 400;
-  src: url("../fonts/Quicksand-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Quicksand";
-  font-weight: 500;
-  src: url("../fonts/Quicksand-Medium.ttf");
-}
-
-@font-face {
-  font-family: "Quicksand";
-  font-weight: 600;
-  src: url("../fonts/Quicksand-SemiBold.ttf");
-}
-
-@font-face {
-  font-family: "Quicksand";
-  font-weight: 700;
-  src: url("../fonts/Quicksand-Bold.ttf");
-}
-
-@font-face {
   font-family: "Ubuntu";
   font-weight: 300;
   src: url("../fonts/Ubuntu-Light.ttf");
@@ -51,5 +21,3 @@
   font-weight: 700;
   src: url("../fonts/Ubuntu-Bold.ttf");
 }
-
-
