@@ -1,6 +1,6 @@
 ---
 title: "T-800 meets Shakespeare: Using AI to generate poetry"
-subtitle: "I used GPT-3 to generate poetry and other creative content in a quest to understand how it all works"
+subtitle: "I used GPT-3 to generate poetry and other creative content in a quest to understand how it all works."
 date: "2021-08-27"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Building a QR code micro-app with Python and AWS"
-subtitle: "I talk about building a serverless 'hello-world' QR code app using Python and AWS"
+subtitle: "I talk about building a serverless 'hello-world' QR code app using Python and AWS."
 date: "2021-08-14"
 ---
 
